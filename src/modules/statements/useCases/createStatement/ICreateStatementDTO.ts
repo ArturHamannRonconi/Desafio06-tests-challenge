@@ -1,4 +1,4 @@
-import { Statement } from "../../entities/Statement";
+import { Statement } from "../../entities/Statement"
 
 export type ICreateStatementDTO =
 Pick<

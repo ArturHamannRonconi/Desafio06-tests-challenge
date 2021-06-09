@@ -1,7 +1,10 @@
-import { AppError } from "../../../../shared/errors/AppError";
+import { AppError } from "../../../../shared/errors/AppError"
 
-export class IncorrectEmailOrPasswordError extends AppError {
-  constructor() {
-    super("Incorrect email or password", 401);
+export class IncorrectEmailOrPasswordError extends AppError
+{
+  constructor()
+  {
+    super("Incorrect email or password", 401)
+    Object.setPrototypeOf(this, IncorrectEmailOrPasswordError.prototype)
   }
 }

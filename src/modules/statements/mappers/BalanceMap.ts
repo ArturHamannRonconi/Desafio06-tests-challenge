@@ -1,4 +1,4 @@
-import { Statement } from "../entities/Statement";
+import { Statement } from "../entities/Statement"
 
 export class BalanceMap {
   static toDTO({statement, balance}: { statement: Statement[], balance: number}) {
@@ -18,7 +18,7 @@ export class BalanceMap {
         created_at,
         updated_at
       }
-    ));
+    ))
 
     return {
       statement: parsedStatement,
