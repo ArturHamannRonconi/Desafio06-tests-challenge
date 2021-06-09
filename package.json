@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn --clear ./src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
-    "test": "jest -i",
-    "start:db": "docker run --name database_rentx_test -d -v pgdata_test:/data/postgres -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=password -e POSTGRES_DB=fin_api postgres"
+    "test": "NODE_ENV=test jest -i",
+    "start:db": "docker run --name database_fin_api -d -v pgdata:/data/postgres -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=password -e POSTGRES_DB=fin_api postgres",
+    "start:db_test": "docker run --name database_fin_api_test -d -v pgdata_test:/data/postgres -p 5433:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=password -e POSTGRES_DB=fin_api_test postgres"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -30,8 +31,10 @@
     "@types/jest": "^26.0.23",
     "@types/jsonwebtoken": "^8.5.1",
     "@types/node": "^14.14.35",
+    "@types/supertest": "^2.0.11",
     "@types/uuid": "^8.3.0",
     "jest": "^27.0.4",
+    "supertest": "^6.1.3",
     "ts-jest": "^27.0.3",
     "ts-node-dev": "^1.1.6",
     "typescript": "^4.2.3"

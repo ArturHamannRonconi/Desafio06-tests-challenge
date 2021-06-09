@@ -21,9 +21,7 @@ export class accountsTable1616682561481 implements MigrationInterface {
         },
         {
           name: 'amount',
-          type: 'decimal',
-          precision: 5,
-          scale: 2,
+          type: 'integer'
         },
         {
           name: 'type',
